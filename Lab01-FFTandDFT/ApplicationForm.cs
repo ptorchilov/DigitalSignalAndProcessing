@@ -1,31 +1,27 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Program.cs" company="BSUIR">
+// <copyright file="ApplicationForm.cs" company="BSUIR">
 //   Torchilov Pavel
 // </copyright>
 // <summary>
-//   The program.
+//   Defines the ApplicationForm type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace Lab01_FFTandDFT
 {
-    using System;
     using System.Windows.Forms;
 
     /// <summary>
-    /// The program.
+    /// The application form.
     /// </summary>
-    public static class Program
+    public partial class ApplicationForm : Form
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// Initializes a new instance of the <see cref="ApplicationForm"/> class.
         /// </summary>
-        [STAThread]
-        public static void Main()
+        public ApplicationForm()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ApplicationForm());
+            this.InitializeComponent();
         }
     }
 }

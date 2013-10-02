@@ -1,6 +1,18 @@
-﻿namespace Lab01_FFTandDFT
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ApplicationForm.Designer.cs" company="BSUIR">
+//   Torchilov Pavel
+// </copyright>
+// <summary>
+//   Defines the ApplicationForm type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace Lab01_FFTandDFT
 {
-    partial class Form1
+    /// <summary>
+    /// The application form.
+    /// </summary>
+    public partial class ApplicationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -13,10 +25,11 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing && (this.components != null))
             {
-                components.Dispose();
+                this.components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -30,14 +43,13 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // ApplicationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 442);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1Load);
+            this.Name = "ApplicationForm";
+            this.Text = "ApplicationForm";
             this.ResumeLayout(false);
 
         }
@@ -45,4 +57,3 @@
         #endregion
     }
 }
-
