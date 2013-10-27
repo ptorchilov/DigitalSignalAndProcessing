@@ -46,6 +46,7 @@ namespace Lab01_FFTandDFT
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageDFT = new System.Windows.Forms.TabPage();
             this.tabPageFFT = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageDFT.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +77,7 @@ namespace Lab01_FFTandDFT
             // 
             // tabPageDFT
             // 
+            this.tabPageDFT.Controls.Add(this.button1);
             this.tabPageDFT.Controls.Add(this.zedGraphControl1);
             this.tabPageDFT.Location = new System.Drawing.Point(4, 22);
             this.tabPageDFT.Name = "tabPageDFT";
@@ -94,6 +96,16 @@ namespace Lab01_FFTandDFT
             this.tabPageFFT.TabIndex = 1;
             this.tabPageFFT.Text = "FFT";
             this.tabPageFFT.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(653, 28);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.DrawDftButtonClick);
             // 
             // ApplicationForm
             // 
@@ -118,5 +130,6 @@ namespace Lab01_FFTandDFT
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPageDFT;
         private System.Windows.Forms.TabPage tabPageFFT;
+        private System.Windows.Forms.Button button1;
     }
 }

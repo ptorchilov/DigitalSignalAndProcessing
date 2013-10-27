@@ -23,5 +23,18 @@ namespace Lab01_FFTandDFT
         {
             this.InitializeComponent();
         }
+
+        /// <summary>
+        /// Draws the DFT button click.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void DrawDftButtonClick(object sender, System.EventArgs e)
+        {
+            var originalValuesVector = TransformUtils.GetFunctionVector();
+
+
+
+        }
     }
 }
