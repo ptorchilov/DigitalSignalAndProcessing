@@ -6,7 +6,7 @@
 
 namespace Lab01_FFTandDFT
 {
-    using System.Numerics;
+    using System;
 
     /// <summary>
     /// Class for function
@@ -20,9 +20,9 @@ namespace Lab01_FFTandDFT
         /// <returns>
         /// Function for x
         /// </returns>
-        public static Complex GetFunction(Complex x)
+        public static double GetFunction(double x)
         {
-            return Complex.Cos(x) + Complex.Sin(2 * x);
+            return Math.Cos(x) + Math.Sin(2 * x);
         }
     }
 }

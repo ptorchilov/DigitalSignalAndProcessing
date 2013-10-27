@@ -33,7 +33,7 @@ namespace Lab01_FFTandDFT
         {
             var originalValuesVector = TransformUtils.GetFunctionVector();
 
-
+//            var DFTvaluesVector = 
 
         }
     }

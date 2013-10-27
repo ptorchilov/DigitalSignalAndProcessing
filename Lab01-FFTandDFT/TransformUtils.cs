@@ -38,7 +38,7 @@ namespace Lab01_FFTandDFT
         {
             const double Interval = Period / N;
             var valuesVector = new Complex[N];
-            Complex count = 0;
+            var count = 0.0;
 
             for (var i = 0; i < N; i++)
             {
@@ -47,6 +47,50 @@ namespace Lab01_FFTandDFT
             }
 
             return valuesVector;
+        }
+
+        /// <summary>
+        /// Makes the DFT.
+        /// </summary>
+        /// <param name="functionVector">The function vector.</param>
+        /// <param name="direction">The direction.</param>
+        /// <returns>Vector of function after DFT</returns>
+        public static Complex[] MakeDFT(Complex[] functionVector, TransformDirection direction)
+        {
+            var DFTVector = new Complex[N];
+
+            for (var i = 0; i < N; i++)
+            {
+                for (var j = 0; j < N; j++)
+                {
+                    DFTVector[i] += functionVector[j] * GetComplexExponent(direction, i, j);
+                }
+
+                if (direction == TransformDirection.Direct)
+                {
+                    DFTVector[i] /= N;
+                }
+            }
+
+            return DFTVector;
+        }
+
+        #endregion
+
+        #region PrivateMethods
+
+        /// <summary>
+        /// Gets the complex exponent.
+        /// </summary>
+        /// <param name="direction">The direction.</param>
+        /// <param name="i">The attribute.</param>
+        /// <param name="j">The object.</param>
+        /// <returns>
+        /// Complex exponent
+        /// </returns>
+        private static Complex GetComplexExponent(TransformDirection direction, int i, int j)
+        {
+            return Complex.Exp(-(int)direction * 2 * Math.PI * Complex.ImaginaryOne * i * j / N);
         }
 
         #endregion
