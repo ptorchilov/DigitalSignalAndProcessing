@@ -1,6 +1,6 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="ConvolutionUtils.cs" company="BSUIR">
-// Torchilov Pavel
+// <copyright file="CorrelationUtils.cs" company="BSUIR">
+// Torchilov Pavel 
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -10,20 +10,20 @@ namespace Lab02_C_n_C
     using System.Numerics;
 
     /// <summary>
-    /// Methods for convolution funstion
+    /// Methods for correlation
     /// </summary>
-    public static class ConvolutionUtils
+    public static class CorrelationUtils
     {
         /// <summary>
-        /// Gets the convolution.
+        /// Gets the correlation.
         /// </summary>
         /// <param name="originalVector">The original vector.</param>
-        /// <param name="convolutionVector">The convolution vector.</param>
-        /// <returns>Result of convolution</returns>
+        /// <param name="correlationVector">The correlation vector.</param>
+        /// <returns></returns>
         /// <exception cref="System.ArgumentException">Different length of vectors</exception>
-        public static Complex[] GetConvolution(Complex[] originalVector, Complex[] convolutionVector)
+        public static Complex[] GetCorrelation(Complex[] originalVector, Complex[] correlationVector)
         {
-            if (originalVector.Length != convolutionVector.Length)
+            if (originalVector.Length != correlationVector.Length)
             {
                 throw new ArgumentException("Different length of vectors");
             }
@@ -38,11 +38,11 @@ namespace Lab02_C_n_C
                 {
                     if (i + j < N)
                     {
-                        result[i] += originalVector[j] + convolutionVector[i + j];
+                        result[i] += originalVector[j] + correlationVector[i + j];
                     }
                     else
                     {
-                        result[i] += originalVector[j] + convolutionVector[i + j - N];
+                        result[i] += originalVector[j] + correlationVector[i + j - N];
                     }
                 }
 
@@ -52,16 +52,9 @@ namespace Lab02_C_n_C
             return result;
         }
 
-        /// <summary>
-        /// Gets the convolution with FFT.
-        /// </summary>
-        /// <param name="originalVector">The original vector.</param>
-        /// <param name="convolutionVector">The convolution vector.</param>
-        /// <returns>Result of convolution with FFT</returns>
-        /// <exception cref="System.ArgumentException">Different length of vectors</exception>
-        public static Complex[] GetConvolutionWithFFT(Complex[] originalVector, Complex[] convolutionVector)
+        public static Complex[] GetCorrelationWithFFT(Complex[] originalVector, Complex[] correlationVector)
         {
-            if (originalVector.Length != convolutionVector.Length)
+            if (originalVector.Length != correlationVector.Length)
             {
                 throw new ArgumentException("Different length of vectors");
             }
@@ -72,6 +65,5 @@ namespace Lab02_C_n_C
 
             return result;
         }
-
     }
 }

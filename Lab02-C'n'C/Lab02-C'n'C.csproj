@@ -61,6 +61,7 @@
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ConvolutionUtils.cs" />
+    <Compile Include="CorrelationUtils.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ApplicationForm.resx">
