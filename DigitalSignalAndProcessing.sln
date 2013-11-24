@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab01-FFTandDFT", "Lab01-FFTandDFT\Lab01-FFTandDFT.csproj", "{BE8A27B1-CDBA-4DF8-92EE-918CDEFCC374}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab02-C'n'C", "Lab02-C'n'C\Lab02-C'n'C.csproj", "{7CF83131-FE99-4D19-ACF5-C081E25F4F8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab02-CnC", "Lab02-C'n'C\Lab02-CnC.csproj", "{7CF83131-FE99-4D19-ACF5-C081E25F4F8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -19,7 +19,7 @@ namespace Lab01_FFTandDFT
         /// <summary>
         /// The number of samples.
         /// </summary>
-        private const int N = 8;
+        public const int N = 8;
 
         /// <summary>
         /// The period
