@@ -38,11 +38,11 @@ namespace Lab02_C_n_C
                 {
                     if (i + j < N)
                     {
-                        result[i] += originalVector[j] + correlationVector[i + j];
+                        result[i] += originalVector[j] * correlationVector[i + j];
                     }
                     else
                     {
-                        result[i] += originalVector[j] + correlationVector[i + j - N];
+                        result[i] += originalVector[j] * correlationVector[i + j - N];
                     }
                 }
 

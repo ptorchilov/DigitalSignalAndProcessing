@@ -36,13 +36,13 @@ namespace Lab02_C_n_C
             {
                 for (var j = 0; j < N; j++)
                 {
-                    if (i + j < N)
+                    if (i - j >= 0)
                     {
-                        result[i] += originalVector[j] + convolutionVector[i + j];
+                        result[i] += originalVector[j] * convolutionVector[i - j];
                     }
                     else
                     {
-                        result[i] += originalVector[j] + convolutionVector[i + j - N];
+                        result[i] += originalVector[j] * convolutionVector[i - j + N];
                     }
                 }
 
