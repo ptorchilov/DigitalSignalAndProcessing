@@ -7,7 +7,10 @@
 namespace Lab02_C_n_C
 {
     using System;
+    using System.Linq;
     using System.Numerics;
+
+    using Lab01_FFTandDFT;
 
     /// <summary>
     /// Methods for convolution funstion
@@ -65,12 +68,13 @@ namespace Lab02_C_n_C
             {
                 throw new ArgumentException("Different length of vectors");
             }
+            
+            var originalVectorWithFFT = TransformUtils.MakeFFT(originalVector, TransformDirection.Direct);
+            var convolutionVectorWithFFT = TransformUtils.MakeFFT(convolutionVector, TransformDirection.Direct);
 
-            // ReSharper disable once InconsistentNaming
-            var N = originalVector.Length;
-            var result = new Complex[N];
+            var result = originalVectorWithFFT.Zip(convolutionVectorWithFFT, (x, y) => x * y).ToArray();
 
-            return result;
+            return TransformUtils.MakeFFT(result, TransformDirection.Reverse);
         }
 
     }

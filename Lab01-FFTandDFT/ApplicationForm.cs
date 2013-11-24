@@ -152,8 +152,8 @@ namespace Lab01_FFTandDFT
             PointPairList list_phase = new PointPairList();
             PointPairList list_revers = new PointPairList();
 
-            Complex[] values = TransformUtils.MakeFFTFull(funcValues, TransformDirection.Direct);            
-            Complex[] reverseValues = TransformUtils.MakeFFTFull(values, TransformDirection.Reverse);  
+            Complex[] values = TransformUtils.MakeFFT(funcValues, TransformDirection.Direct);            
+            Complex[] reverseValues = TransformUtils.MakeFFT(values, TransformDirection.Reverse);  
 
 
             for (int i = 0; i < values.Length; i++)

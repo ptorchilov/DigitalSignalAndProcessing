@@ -7,7 +7,10 @@
 namespace Lab02_C_n_C
 {
     using System;
+    using System.Linq;
     using System.Numerics;
+
+    using Lab01_FFTandDFT;
 
     /// <summary>
     /// Methods for correlation
@@ -60,10 +63,13 @@ namespace Lab02_C_n_C
             }
 
             // ReSharper disable once InconsistentNaming
-            var N = originalVector.Length;
-            var result = new Complex[N];
+            var originalVectorWithFFT = TransformUtils.MakeFFT(originalVector, TransformDirection.Direct);
+            var correlationVectorWithFFT = TransformUtils.MakeFFT(correlationVector, TransformDirection.Direct);
 
-            return result;
+            var result =
+                originalVectorWithFFT.Zip(correlationVectorWithFFT, (x, y) => Complex.Conjugate(x) * y).ToArray();
+
+            return TransformUtils.MakeFFT(result, TransformDirection.Reverse);
         }
     }
 }

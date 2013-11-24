@@ -97,7 +97,7 @@ namespace Lab01_FFTandDFT
         /// <param name="functionVector">The function vector.</param>
         /// <param name="direction">The direction.</param>
         /// <returns></returns>
-        public static Complex[] MakeFFT(Complex[] functionVector, TransformDirection direction)
+        private static Complex[] MakeFFTRecursive(Complex[] functionVector, TransformDirection direction)
         {
             if (functionVector.Length == 1)
             {
@@ -123,8 +123,8 @@ namespace Lab01_FFTandDFT
                 Complexibility++;
             }
 
-            var leftResult = MakeFFT(leftPath, direction);
-            var rightResult = MakeFFT(rightPath, direction);
+            var leftResult = MakeFFTRecursive(leftPath, direction);
+            var rightResult = MakeFFTRecursive(rightPath, direction);
 
             if (direction == TransformDirection.Direct)
             {
@@ -152,10 +152,10 @@ namespace Lab01_FFTandDFT
         /// <param name="functionVector">The function vector.</param>
         /// <param name="direction">The direction.</param>
         /// <returns></returns>
-        public static Complex[] MakeFFTFull(Complex[] functionVector, TransformDirection direction)
+        public static Complex[] MakeFFT(Complex[] functionVector, TransformDirection direction)
         {
             Complexibility = 0;
-            var values = MakeFFT(functionVector, direction);
+            var values = MakeFFTRecursive(functionVector, direction);
             FFTReorder(values);
             return values;
         }
