@@ -36,16 +36,27 @@ namespace Lab01_FFTandDFT
         /// Gets the function vector.
         /// </summary>
         /// <returns>Values vector for function</returns>
-        public static Complex[] GetFunctionVector()
+        public static Complex[] GetFunctionVector(ChooseFunction function)
         {
             const double Interval = Period / N;
             var valuesVector = new Complex[N];
             var count = 0.0;
 
-            for (var i = 0; i < N; i++)
+            if (function == ChooseFunction.OriginalFunction)
             {
-                valuesVector[i] = Function.GetFunction(count);
-                count += Interval;
+                for (var i = 0; i < N; i++)
+                {
+                    valuesVector[i] = Functions.GetOriginalFunction(count);
+                    count += Interval;
+                }
+            }
+            else
+            {
+                for (var i = 0; i < N; i++)
+                {
+                    valuesVector[i] = Functions.GetFunctionForConvolution(count);
+                    count += Interval;
+                }
             }
 
             return valuesVector;
@@ -60,6 +71,7 @@ namespace Lab01_FFTandDFT
         public static Complex[] MakeDFT(Complex[] functionVector, TransformDirection direction)
         {
             Complexibility = 0;
+            // ReSharper disable once InconsistentNaming
             var DFTVector = new Complex[N];
 
             for (var i = 0; i < N; i++)
@@ -91,10 +103,13 @@ namespace Lab01_FFTandDFT
             {
                 return functionVector;
             }
+            
+            // ReSharper disable once LocalVariableHidesMember
             int N = functionVector.Length;
 
             var wN = Complex.Exp(-(int)direction * 2 * Math.PI * Complex.ImaginaryOne / N);
             var w = new Complex(1, 0);
+            // ReSharper disable once InconsistentNaming
             var FFTVector = new Complex[N];
 
             var leftPath = new Complex[N / 2];

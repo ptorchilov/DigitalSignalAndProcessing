@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
-
-namespace Lab02_C_n_C
+﻿namespace Lab02_C_n_C
 {
+    using System;
+    using System.Windows.Forms;
+
     static class Program
     {
         /// <summary>

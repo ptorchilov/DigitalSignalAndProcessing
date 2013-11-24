@@ -35,7 +35,7 @@ namespace Lab01_FFTandDFT
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void DrawDftButtonClick(object sender, System.EventArgs e)
         {
-            var originalValuesVector = TransformUtils.GetFunctionVector();
+            var originalValuesVector = TransformUtils.GetFunctionVector(ChooseFunction.OriginalFunction);
 
             this.DrawOriginal(originalValuesVector, zedGraphControl1);
             DrawDFT(originalValuesVector, zedGraphControl2, zedGraphControl3, zedGraphControl4);
@@ -179,7 +179,7 @@ namespace Lab01_FFTandDFT
 
         private void button2_Click(object sender, System.EventArgs e)
         {
-            var originalValuesVector = TransformUtils.GetFunctionVector();
+            var originalValuesVector = TransformUtils.GetFunctionVector(ChooseFunction.OriginalFunction);
 
             this.DrawOriginal(originalValuesVector, zedGraphControl8);
             DrawFFT(originalValuesVector, zedGraphControl7, zedGraphControl6, zedGraphControl5);
