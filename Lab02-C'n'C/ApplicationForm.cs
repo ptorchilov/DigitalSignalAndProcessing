@@ -66,18 +66,24 @@
         {
             var originalVector = TransformUtils.GetFunctionVector(ChooseFunction.OriginalFunction);
             var zVector = TransformUtils.GetFunctionVector(ChooseFunction.ConvolutionFunction);
-            var convulationVector = ConvulationUtils.GetConvolution(originalVector, zVector);
 
-            this.DrawValues(convulationVector, convulation, "Convulation Y with Z", Color.Red);
+            var convulationVector = ConvulationUtils.GetConvolution(originalVector, zVector);
+            var convulationVectorWithFFT = ConvulationUtils.GetConvolutionWithFFT(originalVector, zVector);
+
+            this.DrawValues(convulationVector, convulation, "Convulation Y and Z", Color.Red);
+            this.DrawValues(convulationVectorWithFFT, convulationWithFFT, "Convulation Y and Z with FFT", Color.Red);
         }
 
         private void DrawCorrelationClick(object sender, EventArgs e)
         {
             var originalVector = TransformUtils.GetFunctionVector(ChooseFunction.OriginalFunction);
             var zVector = TransformUtils.GetFunctionVector(ChooseFunction.ConvolutionFunction);
-            var correcationVector = CorrelationUtils.GetCorrelation(originalVector, zVector);
 
-            this.DrawValues(correcationVector, correlation, "Correlation Y with Z", Color.Green);
+            var correlationVector = CorrelationUtils.GetCorrelation(originalVector, zVector);
+            var correlationVectorWithFFT = CorrelationUtils.GetCorrelationWithFFT(originalVector, zVector);
+
+            this.DrawValues(correlationVector, correlation, "Correlation Y and Z", Color.Green);
+            this.DrawValues(correlationVectorWithFFT, correlationWithFFT, "Correlation Y and Z with FFT", Color.Green);
         }
     }
 }
