@@ -62,6 +62,11 @@
             this.DrawValues(zVector, zFunction, "z = sin(2x)", Color.Blue);
         }
 
+        /// <summary>
+        /// Draws the convulation click.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void DrawConvulationClick(object sender, EventArgs e)
         {
             var originalVector = TransformUtils.GetFunctionVector(ChooseFunction.OriginalFunction);
@@ -74,6 +79,11 @@
             this.DrawValues(convulationVectorWithFFT, convulationWithFFT, "Convulation Y and Z with FFT", Color.Red);
         }
 
+        /// <summary>
+        /// Draws the correlation click.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void DrawCorrelationClick(object sender, EventArgs e)
         {
             var originalVector = TransformUtils.GetFunctionVector(ChooseFunction.OriginalFunction);
