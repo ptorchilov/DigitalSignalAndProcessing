@@ -61,7 +61,7 @@
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConvolutionUtils.cs" />
+    <Compile Include="ConvulationUtils.cs" />
     <Compile Include="CorrelationUtils.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

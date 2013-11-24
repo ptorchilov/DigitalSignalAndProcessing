@@ -12,7 +12,7 @@ namespace Lab02_C_n_C
     /// <summary>
     /// Methods for convolution funstion
     /// </summary>
-    public static class ConvolutionUtils
+    public static class ConvulationUtils
     {
         /// <summary>
         /// Gets the convolution.

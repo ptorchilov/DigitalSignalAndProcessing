@@ -61,5 +61,23 @@
             var zVector = TransformUtils.GetFunctionVector(ChooseFunction.ConvolutionFunction);
             this.DrawValues(zVector, zFunction, "z = sin(2x)", Color.Blue);
         }
+
+        private void DrawConvulationClick(object sender, EventArgs e)
+        {
+            var originalVector = TransformUtils.GetFunctionVector(ChooseFunction.OriginalFunction);
+            var zVector = TransformUtils.GetFunctionVector(ChooseFunction.ConvolutionFunction);
+            var convulationVector = ConvulationUtils.GetConvolution(originalVector, zVector);
+
+            this.DrawValues(convulationVector, convulation, "Convulation Y with Z", Color.Red);
+        }
+
+        private void DrawCorrelationClick(object sender, EventArgs e)
+        {
+            var originalVector = TransformUtils.GetFunctionVector(ChooseFunction.OriginalFunction);
+            var zVector = TransformUtils.GetFunctionVector(ChooseFunction.ConvolutionFunction);
+            var correcationVector = CorrelationUtils.GetCorrelation(originalVector, zVector);
+
+            this.DrawValues(correcationVector, correlation, "Correlation Y with Z", Color.Green);
+        }
     }
 }
