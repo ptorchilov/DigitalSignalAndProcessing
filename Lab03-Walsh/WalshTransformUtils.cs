@@ -7,6 +7,7 @@
 namespace Lab03_Walsh
 {
     using System;
+
     using Lab01_FFTandDFT;
 
     /// <summary>
@@ -14,6 +15,35 @@ namespace Lab03_Walsh
     /// </summary>
     public static class WalshTransformUtils
     {
+        /// <summary>
+        /// The period
+        /// </summary>
+        private const double Period = Math.PI * 2;
+
+        /// <summary>
+        /// The number of samples.
+        /// </summary>
+        private const int N = 8;
+
+        /// <summary>
+        /// Gets the function vector.
+        /// </summary>
+        /// <returns></returns>
+        public static double[] GetFunctionVector()
+        {
+            const double Interval = Period / N;
+            var valuesVector = new double[N];
+            var count = 0.0;
+
+            for (var i = 0; i < N; i++)
+            {
+                valuesVector[i] = Functions.GetOriginalFunction(count);
+                count += Interval;
+            }
+
+            return valuesVector;
+        }
+
         /// <summary>
         /// Gets the fast walsh transform.
         /// </summary>

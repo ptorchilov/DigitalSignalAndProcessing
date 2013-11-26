@@ -104,8 +104,9 @@ namespace Lab01_FFTandDFT
                 return functionVector;
             }
             
+            
             // ReSharper disable once LocalVariableHidesMember
-            int N = functionVector.Length;
+            var N = functionVector.Length;
 
             var wN = Complex.Exp(-(int)direction * 2 * Math.PI * Complex.ImaginaryOne / N);
             var w = new Complex(1, 0);
