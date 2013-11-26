@@ -2,6 +2,7 @@
 {
     using System;
     using System.Drawing;
+    using System.Globalization;
     using System.Numerics;
     using System.Windows.Forms;
     using Lab01_FFTandDFT;
@@ -73,7 +74,10 @@
             var zVector = FourierTransformUtils.GetFunctionVector(ChooseFunction.ConvolutionFunction);
 
             var convulationVector = ConvulationUtils.GetConvolution(originalVector, zVector);
+            label5.Text = ConvulationUtils.ConvolutionComplexibility.ToString(CultureInfo.InvariantCulture);
+
             var convulationVectorWithFFT = ConvulationUtils.GetConvolutionWithFFT(originalVector, zVector);
+            label7.Text = ConvulationUtils.ConvolutionComplexibilityFFT.ToString(CultureInfo.InvariantCulture);
 
             this.DrawValues(convulationVector, convulation, "Convulation Y and Z", Color.Red);
             this.DrawValues(convulationVectorWithFFT, convulationWithFFT, "Convulation Y and Z with FFT", Color.Red);
@@ -90,7 +94,10 @@
             var zVector = FourierTransformUtils.GetFunctionVector(ChooseFunction.ConvolutionFunction);
 
             var correlationVector = CorrelationUtils.GetCorrelation(originalVector, zVector);
+            label10.Text = CorrelationUtils.CorrelationComplexibility.ToString(CultureInfo.InvariantCulture);
+
             var correlationVectorWithFFT = CorrelationUtils.GetCorrelationWithFFT(originalVector, zVector);
+            label8.Text = CorrelationUtils.CorrelationComplexibilityWithFFT.ToString(CultureInfo.InvariantCulture);
 
             this.DrawValues(correlationVector, correlation, "Correlation Y and Z", Color.Green);
             this.DrawValues(correlationVectorWithFFT, correlationWithFFT, "Correlation Y and Z with FFT", Color.Green);

@@ -18,6 +18,16 @@ namespace Lab02_C_n_C
     public static class CorrelationUtils
     {
         /// <summary>
+        /// The correlation complexibility
+        /// </summary>
+        public static int CorrelationComplexibility = 0;
+
+        /// <summary>
+        /// The correlation complexibility with FFT
+        /// </summary>
+        public static int CorrelationComplexibilityWithFFT = 0;
+
+        /// <summary>
         /// Gets the correlation.
         /// </summary>
         /// <param name="originalVector">The original vector.</param>
@@ -31,6 +41,8 @@ namespace Lab02_C_n_C
                 throw new ArgumentException("Different length of vectors");
             }
 
+            CorrelationComplexibility = 0;
+
             // ReSharper disable once InconsistentNaming
             var N = originalVector.Length;
             var result = new Complex[N];
@@ -42,10 +54,12 @@ namespace Lab02_C_n_C
                     if (i + j < N)
                     {
                         result[i] += originalVector[j] * correlationVector[i + j];
+                        CorrelationComplexibility++;
                     }
                     else
                     {
                         result[i] += originalVector[j] * correlationVector[i + j - N];
+                        CorrelationComplexibility++;
                     }
                 }
 
@@ -62,9 +76,14 @@ namespace Lab02_C_n_C
                 throw new ArgumentException("Different length of vectors");
             }
 
+            CorrelationComplexibilityWithFFT = 0;
+
             // ReSharper disable once InconsistentNaming
             var originalVectorWithFFT = FourierTransformUtils.MakeFFT(originalVector, TransformDirection.Direct);
+            CorrelationComplexibilityWithFFT += FourierTransformUtils.Complexibility;
+
             var correlationVectorWithFFT = FourierTransformUtils.MakeFFT(correlationVector, TransformDirection.Direct);
+            CorrelationComplexibilityWithFFT += FourierTransformUtils.Complexibility;
 
             var result =
                 originalVectorWithFFT.Zip(correlationVectorWithFFT, (x, y) => Complex.Conjugate(x) * y).ToArray();

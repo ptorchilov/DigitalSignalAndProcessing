@@ -33,6 +33,8 @@
             this.walshTransform = new ZedGraph.ZedGraphControl();
             this.reverseFunction = new ZedGraph.ZedGraphControl();
             this.drawButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // originalFunction
@@ -87,11 +89,33 @@
             this.drawButton.UseVisualStyleBackColor = true;
             this.drawButton.Click += new System.EventHandler(this.DrawButtonClick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(26, 397);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(232, 29);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "y = cos(x) + sin(2x)";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(336, 397);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 29);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "N = 8";
+            // 
             // ApplicationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 474);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.drawButton);
             this.Controls.Add(this.reverseFunction);
             this.Controls.Add(this.walshTransform);
@@ -99,6 +123,7 @@
             this.Name = "ApplicationForm";
             this.Text = "Lab03 - Walsh Transform - v1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -108,6 +133,8 @@
         private ZedGraph.ZedGraphControl walshTransform;
         private ZedGraph.ZedGraphControl reverseFunction;
         private System.Windows.Forms.Button drawButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

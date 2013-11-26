@@ -18,6 +18,16 @@ namespace Lab02_C_n_C
     public static class ConvulationUtils
     {
         /// <summary>
+        /// The convolution complexibility
+        /// </summary>
+        public static int ConvolutionComplexibility = 0;
+
+        /// <summary>
+        /// The convolution complexibility FFT
+        /// </summary>
+        public static int ConvolutionComplexibilityFFT = 0;
+
+        /// <summary>
         /// Gets the convolution.
         /// </summary>
         /// <param name="originalVector">The original vector.</param>
@@ -31,6 +41,8 @@ namespace Lab02_C_n_C
                 throw new ArgumentException("Different length of vectors");
             }
 
+            ConvolutionComplexibility = 0;
+
             // ReSharper disable once InconsistentNaming
             var N = originalVector.Length;
             var result = new Complex[N];
@@ -42,10 +54,12 @@ namespace Lab02_C_n_C
                     if (i - j >= 0)
                     {
                         result[i] += originalVector[j] * convolutionVector[i - j];
+                        ConvolutionComplexibility++;
                     }
                     else
                     {
                         result[i] += originalVector[j] * convolutionVector[i - j + N];
+                        ConvolutionComplexibility++;
                     }
                 }
 
@@ -68,9 +82,14 @@ namespace Lab02_C_n_C
             {
                 throw new ArgumentException("Different length of vectors");
             }
+
+            ConvolutionComplexibilityFFT = 0;
             
             var originalVectorWithFFT = FourierTransformUtils.MakeFFT(originalVector, TransformDirection.Direct);
+            ConvolutionComplexibilityFFT += FourierTransformUtils.Complexibility;
+
             var convolutionVectorWithFFT = FourierTransformUtils.MakeFFT(convolutionVector, TransformDirection.Direct);
+            ConvolutionComplexibilityFFT += FourierTransformUtils.Complexibility;
 
             var result = originalVectorWithFFT.Zip(convolutionVectorWithFFT, (x, y) => x * y).ToArray();
 
