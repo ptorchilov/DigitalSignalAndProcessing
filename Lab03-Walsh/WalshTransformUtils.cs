@@ -7,7 +7,6 @@
 namespace Lab03_Walsh
 {
     using System;
-
     using Lab01_FFTandDFT;
 
     /// <summary>
@@ -53,9 +52,9 @@ namespace Lab03_Walsh
         /// <exception cref="System.ArgumentException">Invalid length of vector.</exception>
         public static double[] GetFastWalshTransform(double[] functionVector, TransformDirection direction)
         {
-            if (functionVector.Length <= 1)
+            if (functionVector.Length == 1)
             {
-                throw new ArgumentException("Invalid length of vector.");
+                return functionVector;
             }
 
             // ReSharper disable once InconsistentNaming
