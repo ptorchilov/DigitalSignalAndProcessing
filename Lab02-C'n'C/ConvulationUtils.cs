@@ -69,12 +69,12 @@ namespace Lab02_C_n_C
                 throw new ArgumentException("Different length of vectors");
             }
             
-            var originalVectorWithFFT = TransformUtils.MakeFFT(originalVector, TransformDirection.Direct);
-            var convolutionVectorWithFFT = TransformUtils.MakeFFT(convolutionVector, TransformDirection.Direct);
+            var originalVectorWithFFT = FourierTransformUtils.MakeFFT(originalVector, TransformDirection.Direct);
+            var convolutionVectorWithFFT = FourierTransformUtils.MakeFFT(convolutionVector, TransformDirection.Direct);
 
             var result = originalVectorWithFFT.Zip(convolutionVectorWithFFT, (x, y) => x * y).ToArray();
 
-            return TransformUtils.MakeFFT(result, TransformDirection.Reverse);
+            return FourierTransformUtils.MakeFFT(result, TransformDirection.Reverse);
         }
 
     }

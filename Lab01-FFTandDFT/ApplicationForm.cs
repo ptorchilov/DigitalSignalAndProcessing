@@ -35,11 +35,11 @@ namespace Lab01_FFTandDFT
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void DrawDftButtonClick(object sender, System.EventArgs e)
         {
-            var originalValuesVector = TransformUtils.GetFunctionVector(ChooseFunction.OriginalFunction);
+            var originalValuesVector = FourierTransformUtils.GetFunctionVector(ChooseFunction.OriginalFunction);
 
             this.DrawOriginal(originalValuesVector, zedGraphControl1);
             DrawDFT(originalValuesVector, zedGraphControl2, zedGraphControl3, zedGraphControl4);
-            label4.Text = TransformUtils.Complexibility.ToString();
+            label4.Text = FourierTransformUtils.Complexibility.ToString();
         }
 
         /// <summary>
@@ -98,8 +98,8 @@ namespace Lab01_FFTandDFT
             PointPairList list_phase = new PointPairList();
             PointPairList list_revers = new PointPairList();
 
-            Complex[] values = TransformUtils.MakeDFT(funcValues, TransformDirection.Direct);           
-            Complex[] reverseValues = TransformUtils.MakeDFT(values, TransformDirection.Reverse);
+            Complex[] values = FourierTransformUtils.MakeDFT(funcValues, TransformDirection.Direct);           
+            Complex[] reverseValues = FourierTransformUtils.MakeDFT(values, TransformDirection.Reverse);
 
 
             for (int i = 0; i < values.Length; i++)
@@ -152,8 +152,8 @@ namespace Lab01_FFTandDFT
             PointPairList list_phase = new PointPairList();
             PointPairList list_revers = new PointPairList();
 
-            Complex[] values = TransformUtils.MakeFFT(funcValues, TransformDirection.Direct);            
-            Complex[] reverseValues = TransformUtils.MakeFFT(values, TransformDirection.Reverse);  
+            Complex[] values = FourierTransformUtils.MakeFFT(funcValues, TransformDirection.Direct);            
+            Complex[] reverseValues = FourierTransformUtils.MakeFFT(values, TransformDirection.Reverse);  
 
 
             for (int i = 0; i < values.Length; i++)
@@ -179,11 +179,11 @@ namespace Lab01_FFTandDFT
 
         private void button2_Click(object sender, System.EventArgs e)
         {
-            var originalValuesVector = TransformUtils.GetFunctionVector(ChooseFunction.OriginalFunction);
+            var originalValuesVector = FourierTransformUtils.GetFunctionVector(ChooseFunction.OriginalFunction);
 
             this.DrawOriginal(originalValuesVector, zedGraphControl8);
             DrawFFT(originalValuesVector, zedGraphControl7, zedGraphControl6, zedGraphControl5);
-            label5.Text = TransformUtils.Complexibility.ToString();
+            label5.Text = FourierTransformUtils.Complexibility.ToString();
         }
 
 

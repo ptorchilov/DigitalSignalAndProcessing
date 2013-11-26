@@ -63,13 +63,13 @@ namespace Lab02_C_n_C
             }
 
             // ReSharper disable once InconsistentNaming
-            var originalVectorWithFFT = TransformUtils.MakeFFT(originalVector, TransformDirection.Direct);
-            var correlationVectorWithFFT = TransformUtils.MakeFFT(correlationVector, TransformDirection.Direct);
+            var originalVectorWithFFT = FourierTransformUtils.MakeFFT(originalVector, TransformDirection.Direct);
+            var correlationVectorWithFFT = FourierTransformUtils.MakeFFT(correlationVector, TransformDirection.Direct);
 
             var result =
                 originalVectorWithFFT.Zip(correlationVectorWithFFT, (x, y) => Complex.Conjugate(x) * y).ToArray();
 
-            return TransformUtils.MakeFFT(result, TransformDirection.Reverse);
+            return FourierTransformUtils.MakeFFT(result, TransformDirection.Reverse);
         }
     }
 }

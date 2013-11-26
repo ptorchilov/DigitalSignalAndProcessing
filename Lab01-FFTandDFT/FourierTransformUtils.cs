@@ -12,7 +12,7 @@ namespace Lab01_FFTandDFT
     /// <summary>
     /// Class for transform function
     /// </summary>
-    public static class TransformUtils
+    public static class FourierTransformUtils
     {
         #region Constants
 

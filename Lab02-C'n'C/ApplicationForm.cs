@@ -54,11 +54,11 @@
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void DrawFunctionsClick(object sender, EventArgs e)
         {
-            var originalVector = TransformUtils.GetFunctionVector(ChooseFunction.OriginalFunction);
+            var originalVector = FourierTransformUtils.GetFunctionVector(ChooseFunction.OriginalFunction);
 
             this.DrawValues(originalVector, originalFunction, "y = cos(x) + sin(2x)", Color.Blue);
 
-            var zVector = TransformUtils.GetFunctionVector(ChooseFunction.ConvolutionFunction);
+            var zVector = FourierTransformUtils.GetFunctionVector(ChooseFunction.ConvolutionFunction);
             this.DrawValues(zVector, zFunction, "z = sin(2x)", Color.Blue);
         }
 
@@ -69,8 +69,8 @@
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void DrawConvulationClick(object sender, EventArgs e)
         {
-            var originalVector = TransformUtils.GetFunctionVector(ChooseFunction.OriginalFunction);
-            var zVector = TransformUtils.GetFunctionVector(ChooseFunction.ConvolutionFunction);
+            var originalVector = FourierTransformUtils.GetFunctionVector(ChooseFunction.OriginalFunction);
+            var zVector = FourierTransformUtils.GetFunctionVector(ChooseFunction.ConvolutionFunction);
 
             var convulationVector = ConvulationUtils.GetConvolution(originalVector, zVector);
             var convulationVectorWithFFT = ConvulationUtils.GetConvolutionWithFFT(originalVector, zVector);
@@ -86,8 +86,8 @@
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void DrawCorrelationClick(object sender, EventArgs e)
         {
-            var originalVector = TransformUtils.GetFunctionVector(ChooseFunction.OriginalFunction);
-            var zVector = TransformUtils.GetFunctionVector(ChooseFunction.ConvolutionFunction);
+            var originalVector = FourierTransformUtils.GetFunctionVector(ChooseFunction.OriginalFunction);
+            var zVector = FourierTransformUtils.GetFunctionVector(ChooseFunction.ConvolutionFunction);
 
             var correlationVector = CorrelationUtils.GetCorrelation(originalVector, zVector);
             var correlationVectorWithFFT = CorrelationUtils.GetCorrelationWithFFT(originalVector, zVector);
