@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.Graphs = new System.Windows.Forms.TabControl();
             this.Functions = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.drawFunctions = new System.Windows.Forms.Button();
             this.zFunction = new ZedGraph.ZedGraphControl();
             this.originalFunction = new ZedGraph.ZedGraphControl();
@@ -61,6 +64,9 @@
             // 
             // Functions
             // 
+            this.Functions.Controls.Add(this.label3);
+            this.Functions.Controls.Add(this.label2);
+            this.Functions.Controls.Add(this.label1);
             this.Functions.Controls.Add(this.drawFunctions);
             this.Functions.Controls.Add(this.zFunction);
             this.Functions.Controls.Add(this.originalFunction);
@@ -71,6 +77,37 @@
             this.Functions.TabIndex = 1;
             this.Functions.Text = "Functions";
             this.Functions.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(441, 361);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 29);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "N = 8";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(274, 361);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 29);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "z = sin(2x)";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(6, 361);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(232, 29);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "y = cos(x) + sin(2x)";
             // 
             // drawFunctions
             // 
@@ -222,6 +259,7 @@
             this.Text = "Lab02 - Convolution and Correlation - v1";
             this.Graphs.ResumeLayout(false);
             this.Functions.ResumeLayout(false);
+            this.Functions.PerformLayout();
             this.Convulations.ResumeLayout(false);
             this.Correlations.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -243,6 +281,9 @@
         private ZedGraph.ZedGraphControl correlationWithFFT;
         private ZedGraph.ZedGraphControl correlation;
         private System.Windows.Forms.Button drawCorrelation;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label3;
     }
 }
 
